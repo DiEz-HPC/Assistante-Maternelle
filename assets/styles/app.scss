@@ -1,3 +1,8 @@
+@import "~bootstrap/scss/bootstrap";
+@import "variables";
+
 body {
-    background-color: lightgray;
+    background-color: $light-color;
+    margin: 0;
+    padding: 0;
 }
