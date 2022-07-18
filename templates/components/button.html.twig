@@ -1,0 +1,8 @@
+<!-- include this component with the text value ( just add  'with {'text': 'Lorem'}' in your include) -->
+{% block stylesheets %}
+    {{ encore_entry_link_tags('button') }}
+{% endblock %}
+
+<div class="button-container">
+<a href="#contact" class="button">{{text}}</a>
+</div>

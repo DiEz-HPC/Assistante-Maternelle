@@ -1,0 +1,22 @@
+{% block stylesheets %}
+    {{ encore_entry_link_tags('header') }}
+{% endblock %}
+
+<header>
+    <div class="bg-image">
+
+        <div class="white-box text-center p-4 ">
+            <img src="{{ asset('build/images/feuilles.png') }}" alt="logo" class="leaf">
+            <div class="d-flex flex-column justify-content-around mt-4">
+                <h1 class="h3 mt-4">
+                    Lorem Ipsum
+                </h1>
+                <p class="my-4">
+                    Non cupidatat Lorem cupidatat enim aliquip magna sint sint. Nisi dolore laborum consequat non non velit ut.
+                </p>
+                {% include './components/button.html.twig' with {'text': 'Contactez moi !'} %}
+            </div>
+        </div>
+    </div>
+
+</header>
