@@ -1,0 +1,20 @@
+@import "variables";
+
+.footer {
+    height: 60vh;
+
+    .block-top {
+        height: 50%;
+
+        li {
+            list-style: none;
+        }
+    }
+
+    .separate {
+        hr {
+            width: 80%;
+            height: 2px;
+        }
+    }
+}

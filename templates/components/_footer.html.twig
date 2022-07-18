@@ -1,0 +1,44 @@
+{% block stylesheets %}
+    {{ encore_entry_link_tags('footer') }}
+{% endblock %}
+
+<footer class="footer d-flex flex-column mt-5">
+    <div class="block-top d-flex flex-column flex-sm-row">
+        <div class="block-top-left d-flex flex-column align-items-center col-12 col-sm-4 bg-primary">
+            <h4>{{ "Lorem ipsum" | upper}}</h4>
+            <ul class="p-0">
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum dolor.</li>
+            </ul>
+        </div>
+        <div class="block-top-center d-flex flex-column align-items-center col-12 col-sm-4 bg-secondary">
+            <h4>Lorem ipsum.</h4>
+            <ul class="p-0">
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum dolor.</li>
+            </ul>
+        </div>
+        <div class="block-top-right d-flex flex-column align-items-center col-12 col-sm-4 bg-success">
+            <h4>Lorem ipsum.</h4>
+            <ul class="p-0">
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum dolor.</li>
+                <li>Lorem ipsum dolor.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="separate d-flex col-12">
+        <div class="line-left d-flex justify-content-end pe-2 col-4">
+            <hr>
+        </div>
+        <h4 class="col-4 text-center">{{ "Suivez-moi sur les réseaux" | upper }}</h4>
+        <div class="line-right col-4 ps-2">
+            <hr>
+        </div>
+    </div>
+    <div class="block-bottom">
+
+    </div>
+</footer>
