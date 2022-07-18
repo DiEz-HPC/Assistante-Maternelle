@@ -1,7 +1,9 @@
 @import "variables";
 
 .footer {
-    height: 60vh;
+    height: 50vh;
+    background-color: $flash-color;
+    color: $light-color;
 
     .block-top {
         height: 50%;
@@ -16,5 +18,11 @@
             width: 80%;
             height: 2px;
         }
+    }
+
+    .block-bottom {
+       i {
+           font-size: 2em;
+       }
     }
 }
