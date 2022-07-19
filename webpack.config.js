@@ -40,6 +40,7 @@ Encore
     .addStyleEntry('header', './assets/styles/header.scss')
     .addStyleEntry('button', './assets/styles/button.scss')
     .addStyleEntry('footer', './assets/styles/footer.scss')
+    .addStyleEntry('descriptionCard', './assets/styles/descriptionCard.scss')
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
     .enableStimulusBridge('./assets/controllers.json')
 
