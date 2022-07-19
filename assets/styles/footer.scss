@@ -17,12 +17,21 @@
         hr {
             width: 80%;
             height: 2px;
+            color: $light-color;
+            opacity: 1;
         }
     }
 
     .block-bottom {
-       i {
-           font-size: 2em;
-       }
+        .social {
+            width: 60px;
+            background-color: $light-color;
+            border-radius: 50%;
+            padding: 10px;
+            i{
+                font-size: 2em;
+                color: $flash-color;
+            }
+        }
     }
 }
