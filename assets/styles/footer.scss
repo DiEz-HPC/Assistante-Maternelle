@@ -1,12 +1,11 @@
 @import "variables";
 
 .footer {
-    height: 50vh;
+
     background-color: $flash-color;
     color: $light-color;
 
     .block-top {
-        height: 50%;
 
         li {
             list-style: none;
@@ -26,10 +25,10 @@
         .social {
             width: 60px;
             background-color: $light-color;
-            border-radius: 50%;
+            border-radius: 100%;
             padding: 10px;
             i{
-                font-size: 2em;
+                font-size: 2.5em;
                 color: $flash-color;
             }
         }
