@@ -1,0 +1,12 @@
+.descriptionCardContainer {
+    margin-top: 15%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .descriptionCard{
+        .CardLogo{
+            width: 100px;
+            height: 100px;
+        }
+    }
+}
