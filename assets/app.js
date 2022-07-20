@@ -7,6 +7,30 @@
 
 // any CSS you import will output into a single css file (app.css in this case)
 import './styles/app.scss';
-
 // start the Stimulus application
 import './bootstrap';
+
+// import Swiper bundle with all modules installed
+import Swiper from 'swiper/bundle';
+
+// import styles bundle
+import 'swiper/css/bundle';
+
+var Swipes = new Swiper('.swiper-container', {
+    loop: true,
+    effect: 'fade',
+    fadeEffect: {
+        crossFade: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+    },
+    autoplay: {
+        delay: 5000,
+        pauseOnMouseEnter: true,
+    },
+});
