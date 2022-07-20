@@ -1,5 +1,19 @@
 @import "variables.scss";
 
 .contact {
+    color: $flash-color;
+    font-weight: bold;
 
+    .input-form {
+        border-radius: 8px;
+        background-color: $grey-color;
+    }
+
+    button {
+        border: none;
+        border-radius: 50%;
+        background-color: $flash-color;
+        color: $light-color;
+        font-size: 1.5rem;
+    }
 }
