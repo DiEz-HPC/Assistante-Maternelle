@@ -5,7 +5,10 @@
 {% endblock %}
 
 {% block body %}
-    {% include './components/header.html.twig' %}
-    
-    {% include './components/descriptionCard.html.twig' %}
+    {% include 'components/header.html.twig' %}
+    {% include 'components/descriptionCard.html.twig' %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/_footer.html.twig' %}
 {% endblock %}
