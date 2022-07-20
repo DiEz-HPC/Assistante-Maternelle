@@ -1,0 +1,25 @@
+{% block stylesheets %}
+    {{ encore_entry_link_tags('swiper') }}
+{% endblock %}
+
+<div
+    class="swiper-container">
+    <!-- swiper slides -->
+    <div class="swiper-wrapper">
+        {% for picture in pictures %}
+            <div class="swiper-slide" style="background-image: url({{ asset('upload/pictures/' ~ picture.imageName) }})">
+             
+            </div>
+        {% endfor %}
+    </div>
+    <!-- !swiper slides -->
+
+    <!-- next / prev arrows -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <!-- !next / prev arrows -->
+
+    <!-- pagination dots -->
+    <div class="swiper-pagination"></div>
+    <!-- !pagination dots -->
+</div>
