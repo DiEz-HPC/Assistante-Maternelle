@@ -33,7 +33,7 @@ Encore
 
     /* Javascript entry */
     .addEntry('app', './assets/app.js')
-
+    .addEntry('app-admin', './assets/scripts/app-admin.js')
 
     /* Style Entry */
     .addStyleEntry('home', './assets/styles/home.scss')

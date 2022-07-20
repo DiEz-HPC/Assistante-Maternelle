@@ -6,15 +6,11 @@
     class="swiper-container">
     <!-- swiper slides -->
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=24);"></div>
-
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);"></div>
-
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=52);"></div>
-
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=21);"></div>
-
-        <div class="swiper-slide" style="background-image: url(https://source.unsplash.com/random?sig=53);"></div>
+        {% for picture in pictures %}
+            <div class="swiper-slide" style="background-image: url({{ asset('upload/pictures/' ~ picture.imageName) }})">
+             
+            </div>
+        {% endfor %}
     </div>
     <!-- !swiper slides -->
 

@@ -1,6 +1,7 @@
 @import 'variables';
 
 .swiper-container {
+    height: 50vh;
     margin: 0 auto;
     position: relative;
     overflow: hidden;
@@ -12,7 +13,7 @@
         background-size: cover;
         background-position: 50%;
         min-height: 40vh;
-
+        
         display: flex;
         align-items: center;
         justify-content: center;

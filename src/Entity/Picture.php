@@ -4,7 +4,6 @@ namespace App\Entity;
 
 use App\Repository\PictureRepository;
 use Symfony\Component\HttpFoundation\File\File;
-use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
@@ -25,6 +24,12 @@ class Picture
 
     #[ORM\Column(type: 'datetime')]
     private ?\DateTimeInterface $updatedAt = null;
+
+    #[ORM\Column]
+    private ?bool $isPublished = null;
+
+    #[ORM\Column(length: 255)]
+    private ?string $Description = null;
 
     public function getId(): ?int
     {
@@ -56,5 +61,29 @@ class Picture
     {
         return $this->imageName;
     }
-    
+
+    public function isIsPublished(): ?bool
+    {
+        return $this->isPublished;
+    }
+
+    public function setIsPublished(bool $isPublished): self
+    {
+        $this->isPublished = $isPublished;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->Description;
+    }
+
+    public function setDescription(string $Description): self
+    {
+        $this->Description = $Description;
+
+        return $this;
+    }
+
 }
