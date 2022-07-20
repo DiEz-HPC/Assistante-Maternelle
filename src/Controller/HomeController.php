@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Contact;
 use App\Form\ContactType;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\UserRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,9 +15,13 @@ use App\Repository\PictureRepository;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(Request $request, EntityManagerInterface $entityManager, PictureRepository $pictureRepository): Response
+    public function index(Request $request, EntityManagerInterface $entityManager, PictureRepository $pictureRepository, UserRepository $userRepository): Response
     {
-            $pictures = $pictureRepository->findBy([
+        // If no user exists, redirect to first user creation page
+        if(count($userRepository->findAll()) === 0) {
+            return $this->redirectToRoute('app_first_user');
+        }
+        $pictures = $pictureRepository->findBy([
             'isPublished' => true
         ]);
 
@@ -36,6 +41,4 @@ class HomeController extends AbstractController
             'controller_name' => 'HomeController',
         ]);
     }
-
-
 }
