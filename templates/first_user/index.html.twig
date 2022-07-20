@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block title %}Inscription Admin
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+
+
+        <h1>Inscription Admin</h1>
+
+        <p>
+            Vous n'avez aucun compte administrateur ! Veuillez en créer un afin de pouvoir gérer votre site.
+        </p>
+        <div class="example-wrapper">
+            {{ form_start(form) }}
+            {{ form_row(form.email) }}
+            {{ form_row(form.password.first) }}
+            {{ form_row(form.password.second) }}
+
+            <button class="btn btn-primary" type="submit">Enregistrer</button>
+            {{ form_end(form) }}
+        </div>
+    </div>
+{% endblock %}
