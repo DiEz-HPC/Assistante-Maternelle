@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Contact;
 use App\Entity\User;
 use App\Entity\Picture;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -29,6 +30,7 @@ class DashboardController extends AbstractDashboardController
     {
         yield MenuItem::linkToCrud('Gestion du compte', 'fa-solid fa-address-card', User::class);
         yield MenuItem::linkToCrud('Photos', 'fa-regular fa-images', Picture::class);
+        yield MenuItem::linkToCrud('Messages', 'fa-regular fa-envelope', Contact::class);
     }
 
 }
