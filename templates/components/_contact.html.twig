@@ -5,7 +5,7 @@
 {% endblock %}
 
 {{ form_start(form) }}
-<div class="contact form col px-4 px-sm-5 px-lg-0 offset-lg-4 col-lg-4 my-5">
+<div id="contact" class="contact form col px-4 px-sm-5 px-lg-0 offset-lg-4 col-lg-4 my-5">
     <h2 class="text-center mb-5">{{ "Contactez moi" | upper }}</h2>
     {% for message in app.flashes('success') %}
         <div class="alert alert-success">

@@ -32,13 +32,12 @@ class HomeController extends AbstractController
             $entityManager->persist($contact);
             $entityManager->flush();
             $this->addFlash('success', 'Votre message a bien été envoyé');
-            return $this->redirectToRoute('app_home');
+            return $this->redirect($this->generateUrl('app_home') . '#contact');
         }
 
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
             'form' => $form->createView(),
-            'controller_name' => 'HomeController',
         ]);
     }
 }
