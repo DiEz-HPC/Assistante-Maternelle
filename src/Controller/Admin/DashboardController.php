@@ -21,7 +21,7 @@ public function __construct(private PictureRepository $pictureRepository)
     public function index(): Response
     {
         $pictures = $this->pictureRepository->findBy([], ['updatedAt' => 'DESC'], 5);
- 
+
 
         return $this->render('admin/index.html.twig', [
             'pictures' => $pictures,
@@ -39,7 +39,7 @@ public function __construct(private PictureRepository $pictureRepository)
     {
         yield MenuItem::linkToCrud('Photos', 'fa-regular fa-images', Picture::class);
         yield MenuItem::linkToCrud('Gestion du compte', 'fa-solid fa-address-card', User::class);
-       // yield MenuItem::linkToCrud('Messages', 'fa-regular fa-envelope', Contact::class);
+        yield MenuItem::linkToCrud('Messages', 'fa-regular fa-envelope', Contact::class);
     }
 
 }
