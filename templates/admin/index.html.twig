@@ -1,3 +1,44 @@
-{# templates/admin/index.html.twig #}
-
 {% extends '@EasyAdmin/page/content.html.twig' %}
+{% block head_stylesheets %}
+    {{parent()}}
+    {{ encore_entry_link_tags('admin') }}
+{% endblock %}
+
+{% set pictureUrl = ea_url()
+                    .setController('App\\Controller\\Admin\\PictureCrudController')
+                    .setAction('index') 
+%}
+
+
+{% block main %}
+    <div class="container">
+        <div class="row pictureParts">
+            <h2>
+                Vos cinq dernières photos ajoutées
+            </h2>
+            <div class="row justify-content-center align-items-center">
+                {% for picture in pictures %}
+                    <div class="pictureCard col-4">
+                        <img src="{{ asset('upload/pictures/' ~ picture.imageName) }}" alt="{{ picture.imageName }}">
+                        <div class="isVisible align-self-baseline">
+                            {% if picture.isPublished %}
+                                <span class="badge badge-success">Publiée</span>
+                            {% else %}
+                                <span class="badge badge-danger">Non publiée</span>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-2">
+                    <a href="{{ pictureUrl }}" class="btn btn-primary btn-sm">
+                        Gérer vos photos
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
