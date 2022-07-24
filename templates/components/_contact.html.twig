@@ -1,9 +1,5 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 
-{% block stylesheets %}
-    {{ encore_entry_link_tags('contact') }}
-{% endblock %}
-
 {{ form_start(form) }}
 <div id="contact" class="contact form col px-4 px-sm-5 px-lg-0 offset-lg-4 col-lg-4 my-5">
     <h2 class="text-center mb-5">{{ "Contactez moi" | upper }}</h2>
@@ -69,3 +65,4 @@
     </div>
 </div>
 {{ form_end(form) }}
+
