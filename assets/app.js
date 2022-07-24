@@ -16,7 +16,7 @@ import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
 
-var Swipes = new Swiper('.swiper-container', {
+const Swipes = new Swiper('.swiper-container', {
     loop: true,
     effect: 'fade',
     fadeEffect: {
@@ -33,4 +33,36 @@ var Swipes = new Swiper('.swiper-container', {
         delay: 5000,
         pauseOnMouseEnter: true,
     },
+});
+
+const form = document.querySelector('form');
+form.addEventListener('submit', (e) => {
+    const lastname = document.querySelector('#contact_lastname').value;
+    const firstname = document.querySelector('#contact_firstname').value;
+    const email = document.querySelector('#contact_email').value;
+    const object = document.querySelector('#contact_object').value;
+    const message = document.querySelector('#contact_message').value;
+    const data = {
+        lastname: lastname,
+        firstname: firstname,
+        email: email,
+        object: object,
+        message: message,
+    }
+    e.preventDefault();
+    const send = fetch('/', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    }).then(response => {
+        if (response.ok) {
+            alert('Votre message a bien été envoyé');
+            form.reset();
+        } else {
+            alert('Une erreur est survenue');
+        }
+    })
+
 });
