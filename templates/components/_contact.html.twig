@@ -1,13 +1,14 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 
-{{ form_start(form) }}
-<div id="contact" class="contact form col px-4 px-sm-5 px-lg-0 offset-lg-4 col-lg-4 my-5">
-    <h2 class="text-center mb-5">{{ "Contactez moi" | upper }}</h2>
-    {% for message in app.flashes('success') %}
-        <div class="alert alert-success">
-            {{ message }}
-        </div>
-    {% endfor %}
+{{ form_start(form, {
+    attr: {
+        id: 'contact',
+    }
+}) }}
+<div class="contact form col px-4 px-sm-5 px-lg-0 offset-lg-4 col-lg-4 my-5">
+    <h2 id="title-contact" class="text-center mb-5">{{ "Contactez moi" | upper }}</h2>
+    <div id="message-success" class="flash-message alert alert-success"></div>
+    <div id="message-errors" class="flash-message alert alert-danger"></div>
     <div class="col-12 d-flex justify-content-between">
         <div class="mb-3 col-6">
             <div class="pe-3">
@@ -15,7 +16,7 @@
                 {{ form_widget(form.lastname, {
                     attr: {
                         placeholder: "Votre nom",
-                        class: "input-form"
+                        class: "input-form",
                     }
                 }) }}
             </div>
@@ -26,7 +27,7 @@
                 {{ form_widget(form.firstname, {
                     attr: {
                         placeholder: "Votre prénom",
-                        class: "input-form"
+                        class: "input-form",
                     }
                 }) }}
             </div>
@@ -37,7 +38,7 @@
         {{ form_widget(form.email, {
             attr: {
                 placeholder: "Votre email",
-                class: "input-form"
+                class: "input-form",
             }
         }) }}
     </div>
@@ -46,7 +47,7 @@
         {{ form_widget(form.object, {
             attr: {
                 placeholder: "Objet de votre message",
-                class: "input-form"
+                class: "input-form",
             }
         }) }}
     </div>
@@ -56,7 +57,7 @@
             attr: {
                 placeholder: "Votre message",
                 class: "input-form",
-                rows: "7"
+                rows: "7",
             }
         }) }}
     </div>

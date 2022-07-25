@@ -34,6 +34,7 @@ Encore
     /* Javascript entry */
     .addEntry('app', './assets/app.js')
     .addEntry('app-admin', './assets/scripts/app-admin.js')
+    .addEntry('contact_form', './assets/scripts/contact.js')
 
     /* Style Entry */
     .addStyleEntry('home', './assets/styles/home.scss')
