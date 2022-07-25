@@ -16,7 +16,7 @@ import Swiper from 'swiper/bundle';
 // import styles bundle
 import 'swiper/css/bundle';
 
-var Swipes = new Swiper('.swiper-container', {
+new Swiper('.swiper-container', {
     loop: true,
     effect: 'fade',
     fadeEffect: {
