@@ -8,6 +8,10 @@
                     .setController('App\\Controller\\Admin\\PictureCrudController')
                     .setAction('index') 
 %}
+{% set testimoniesUrl = ea_url()
+                    .setController('App\\Controller\\Admin\\TestimonyCrudController')
+                    .setAction('index')
+%}
 
 
 {% block main %}
@@ -20,7 +24,7 @@
                 {% for picture in pictures %}
                     <div class="pictureCard col-4">
                         <img src="{{ asset('upload/pictures/' ~ picture.imageName) }}" alt="{{ picture.imageName }}">
-                        <div class="isVisible align-self-baseline">
+                        <div class="isVisible align-self-baseline my-2">
                             {% if picture.isPublished %}
                                 <span class="badge badge-success">Publiée</span>
                             {% else %}
@@ -39,6 +43,52 @@
                 </div>
             </div>
         </div>
+        <div class="row testimonyParts">
+            <h2>
+                Les cinqs derniers avis
+            </h2>
+            <div class="row justify-content-center align-items-center">
+                {% for testimony in testimonies %}
+                    <div class="card d-flex flex-column col-4 m-3">
+                        <div class="mt-2">
+                            {% for star in 1..5 %}
+                                {% if testimony.rate >= star %}
+                                    <i class="fas fa-star active-star"></i>
+                                {% else %}
+                                    <i class="far fa-star active-star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <div class="testimonial">
+                            {{ testimony.comment }}
+                        </div>
+                        <div class="d-flex flex-row profile pt-4 mt-auto">
+                            <div class="d-flex flex-column pl-2">
+                                <div class="name">{{testimony.name}}</div>
+                                <p class="text-muted designation">{{testimony.createdAt|date('d-m-Y')}}</p>
+                            </div>
+                        </div>
+                        <div class="isVisible align-self-baseline my-2">
+                            {% if testimony.isVisible %}
+                                <span class="badge badge-success">Publiée</span>
+                            {% else %}
+                                <span class="badge badge-danger">Non publiée</span>
+                            {% endif %}
+                        </div>
+                    </div>
 
+                {% endfor %}
+            </div>
+
+            <div class="row justify-content-center mt-3">
+                <div class="col-2">
+                    <a href="{{ testimoniesUrl }}" class="btn btn-primary btn-sm">
+                        Gérer les avis
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
+
+
 {% endblock %}
