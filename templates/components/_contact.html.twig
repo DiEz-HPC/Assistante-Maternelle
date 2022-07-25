@@ -1,9 +1,5 @@
 {% form_theme form 'bootstrap_5_layout.html.twig' %}
 
-{% block stylesheets %}
-    {{ encore_entry_link_tags('contact') }}
-{% endblock %}
-
 {{ form_start(form, {
     attr: {
         id: 'contact',
@@ -73,3 +69,4 @@
     </div>
 </div>
 {{ form_end(form) }}
+

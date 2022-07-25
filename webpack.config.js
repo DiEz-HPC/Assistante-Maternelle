@@ -37,12 +37,6 @@ Encore
 
     /* Style Entry */
     .addStyleEntry('home', './assets/styles/home.scss')
-    .addStyleEntry('header', './assets/styles/header.scss')
-    .addStyleEntry('button', './assets/styles/button.scss')
-    .addStyleEntry('footer', './assets/styles/footer.scss')
-    .addStyleEntry('descriptionCard', './assets/styles/descriptionCard.scss')
-    .addStyleEntry('contact', './assets/styles/contact.scss')
-    .addStyleEntry('swiper', './assets/styles/swiper.scss')
     .addStyleEntry('admin', './assets/styles/admin.scss')
 
     // enables the Symfony UX Stimulus bridge (used in assets/bootstrap.js)
