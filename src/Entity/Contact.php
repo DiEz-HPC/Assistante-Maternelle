@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: ContactRepository::class)]
- class Contact
+class Contact
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -17,7 +17,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     #[
         ORM\Column(length: 255),
-        Assert\NotBlank,
+        Assert\NotBlank(
+            message: "Le nom est obligatoire"
+        ),
         Assert\Length(
             min: 2,
             max: 255,
@@ -29,7 +31,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     #[
         ORM\Column(length: 255),
-        Assert\NotBlank,
+        Assert\NotBlank(
+            message: "Le prénom est obligatoire"
+        ),
         Assert\Length(
             min: 2,
             max: 255,
@@ -41,7 +45,9 @@ use Symfony\Component\Validator\Constraints as Assert;
 
     #[
         ORM\Column(length: 255),
-        Assert\NotBlank,
+        Assert\NotBlank(
+            message: "L'objet est obligatoire"
+        ),
         Assert\Length(
             min: 5,
             max: 255,
@@ -51,13 +57,28 @@ use Symfony\Component\Validator\Constraints as Assert;
     ]
     private ?string $object = null;
 
-    #[ORM\Column(type: Types::TEXT)]
+    #[
+        ORM\Column(type: Types::TEXT),
+        Assert\NotBlank(
+            message: "Le message est obligatoire"
+        ),
+        Assert\Length(
+            min: 5,
+            max: 255,
+            minMessage: "Le message doit faire au moins {{ limit }} caractères",
+            maxMessage: "Le message ne doit pas faire plus de {{ limit }} caractères"
+        )
+    ]
     private ?string $message = null;
 
     #[
         ORM\Column(length: 255),
-        Assert\NotBlank,
-        Assert\Email
+        Assert\NotBlank(
+            message: "L'email est obligatoire"
+        ),
+        Assert\Email(
+            message: "L'email n'est pas valide"
+        )
     ]
     private ?string $email = null;
 

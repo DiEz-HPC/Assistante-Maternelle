@@ -14,3 +14,8 @@
 {% block footer %}
     {% include 'components/_footer.html.twig' %}
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {{ encore_entry_script_tags('contact_form') }}
+{% endblock %}
