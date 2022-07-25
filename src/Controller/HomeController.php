@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PictureRepository;
+use App\Entity\Testimony;
+use App\Form\TestimonyType;
 
 class HomeController extends AbstractController
 {
@@ -35,9 +37,20 @@ class HomeController extends AbstractController
             return $this->redirect($this->generateUrl('app_home') . '#contact');
         }
 
+        $testimony = new Testimony();
+        $testimonyForm = $this->createForm(TestimonyType::class, $testimony);
+        $testimonyForm->handleRequest($request);
+        if ($testimonyForm->isSubmitted() && $testimonyForm->isValid()) {
+            $entityManager->persist($testimony);
+            $entityManager->flush();
+            $this->addFlash('success', 'Votre commentaire a bien été envoyé');
+            return $this->redirect($this->generateUrl('app_home') . '#testimony');
+        }
+
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
             'form' => $form->createView(),
+            'testimonyForm' => $testimonyForm->createView()
         ]);
     }
 }
