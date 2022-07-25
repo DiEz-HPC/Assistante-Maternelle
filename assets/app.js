@@ -50,7 +50,7 @@ form.addEventListener('submit', (e) => {
         message: message,
     }
     e.preventDefault();
-    const send = fetch('/', {
+    const send = fetch('/contact/new', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
