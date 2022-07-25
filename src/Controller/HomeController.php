@@ -15,7 +15,7 @@ use App\Repository\PictureRepository;
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(Request $request, EntityManagerInterface $entityManager, PictureRepository $pictureRepository, UserRepository $userRepository): Response
+    public function index(PictureRepository $pictureRepository, UserRepository $userRepository): Response
     {
         // If no user exists, redirect to first user creation page
         if(count($userRepository->findAll()) === 0) {
@@ -27,13 +27,6 @@ class HomeController extends AbstractController
 
         $contact = new Contact();
         $form = $this->createForm(ContactType::class, $contact);
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            $entityManager->persist($contact);
-            $entityManager->flush();
-            $this->addFlash('success', 'Votre message a bien été envoyé');
-            return $this->redirect($this->generateUrl('app_home') . '#contact');
-        }
 
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
