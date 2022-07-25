@@ -14,10 +14,11 @@ use App\Repository\PictureRepository;
 use App\Entity\Testimony;
 use App\Form\TestimonyType;
 
+
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(PictureRepository $pictureRepository, UserRepository $userRepository): Response
+    public function index(PictureRepository $pictureRepository, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager): Response
     {
         // If no user exists, redirect to first user creation page
         if(count($userRepository->findAll()) === 0) {
