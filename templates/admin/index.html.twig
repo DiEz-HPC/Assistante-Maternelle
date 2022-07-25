@@ -50,6 +50,7 @@
             <div class="row justify-content-center align-items-center">
                 {% for testimony in testimonies %}
                     <div class="card d-flex flex-column col-4 m-3">
+                    <div class="name">{{testimony.name}}</div>
                         <div class="mt-2">
                             {% for star in 1..5 %}
                                 {% if testimony.rate >= star %}
@@ -62,11 +63,10 @@
                         <div class="testimonial">
                             {{ testimony.comment }}
                         </div>
-                        <div class="d-flex flex-row profile pt-4 mt-auto">
-                            <div class="d-flex flex-column pl-2">
-                                <div class="name">{{testimony.name}}</div>
+                        <div class="d-flex flex-row profile pt-2 mt-auto">
+
                                 <p class="text-muted designation">{{testimony.createdAt|date('d-m-Y')}}</p>
-                            </div>
+                
                         </div>
                         <div class="isVisible align-self-baseline my-2">
                             {% if testimony.isVisible %}
