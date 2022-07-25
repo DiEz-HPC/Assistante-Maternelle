@@ -1,0 +1,50 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#testimonyModal">
+    Ajouter un avis
+</button>
+
+<!-- Modal -->
+<div class="modal fade testimonyModal" id="testimonyModal" tabindex="-1" aria-labelledby="feedbackTitle" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="feedbackTitle">Ajouter un avis</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body ">
+                {{ form_start(testimonyForm) }}
+
+                {{ form_row(testimonyForm.name) }}
+                {{ form_row(testimonyForm.email) }}
+                {{ form_row(testimonyForm.comment) }}
+
+                {{ form_label(testimonyForm.rate, "Votre note :", {
+                    label_attr: {
+                        class: "mb-3"
+                    }
+                }) }}
+             
+                <div class="col-12 d-flex justify-content-center ">
+                    <div class="col-8 d-flex justify-content-around" id="starContainer">
+                        <i class="far fa-star star" data-value='1'></i>
+                        <i class="far fa-star star" data-value='2'></i>
+                        <i class="far fa-star star" data-value='3'></i>
+                        <i class="far fa-star star" data-value='4'></i>
+                        <i class="far fa-star star" data-value='5'></i>
+                    </div>
+                </div>
+                {{ form_widget(testimonyForm.rate, {
+            attr: {
+                class: "invisible",
+            }
+        }) }}
+                <div class="d-flex justify-content-center">
+                    <button class="p-3 d-flex justify-content-center sendButton">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </button>
+                </div>
+                {{ form_end(testimonyForm) }}
+            </div>
+        </div>
+    </div>
+</div>
