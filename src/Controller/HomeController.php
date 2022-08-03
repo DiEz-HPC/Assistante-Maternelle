@@ -13,12 +13,12 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Repository\PictureRepository;
 use App\Entity\Testimony;
 use App\Form\TestimonyType;
-
+use App\Repository\TestimonyRepository;
 
 class HomeController extends AbstractController
 {
     #[Route('/', name: 'app_home')]
-    public function index(PictureRepository $pictureRepository, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager): Response
+    public function index(PictureRepository $pictureRepository, UserRepository $userRepository, Request $request, EntityManagerInterface $entityManager, TestimonyRepository $testimonyRepository): Response
     {
         // If no user exists, redirect to first user creation page
         if(count($userRepository->findAll()) === 0) {
@@ -41,9 +41,12 @@ class HomeController extends AbstractController
             return $this->redirect($this->generateUrl('app_home') . '#testimony');
         }
 
+        $testimonies= $testimonyRepository->findAll();
+
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
             'form' => $form->createView(),
+            'testimonies' => $testimonies,
             'testimonyForm' => $testimonyForm->createView()
         ]);
     }
