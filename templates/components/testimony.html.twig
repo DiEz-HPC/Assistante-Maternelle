@@ -1,0 +1,30 @@
+<div class="testimony">
+	<div class="background-testimony mt-3">
+		<img class="first-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
+		<img class="second-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
+		<img class="third-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
+	</div>
+	<div class="white-box text-center p-4 ">
+		<img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf">
+		<div class="carousel slide" data-bs-ride="carousel">
+			<div class="carousel-inner">
+				{% for testimony in testimonies %}
+					<div class="carousel-item {{loop.index == 1 ? "active" : ""}} p-5">
+						<div class="star mb-4">
+							{% for i in 1..5 %}
+								{% if i <= testimony.rate %}
+									<i class="fas fa-star star"></i>
+								{% else %}
+									<i class="far fa-star star"></i>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<p class="name">{{testimony.name}}</p>
+						<p class="comment">{{testimony.comment}}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+		{% include 'components/_testimonyForm.html.twig' %}
+	</div>
+</div></div>
