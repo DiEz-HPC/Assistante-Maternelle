@@ -4,13 +4,13 @@
 		<img class="second-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
 		<img class="third-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
 	</div>
-	<div class="white-box text-center p-4 ">
-		<img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf">
+	<div class="white-box text-center p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+		<img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
 		<div class="carousel slide" data-bs-ride="carousel">
 			<div class="carousel-inner">
 				{% for testimony in testimonies %}
 					<div class="carousel-item {{loop.index == 1 ? "active" : ""}} p-5">
-						<div class="star mb-4">
+						<div class="star mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true" data-aos-anchor-placement="top-bottom">
 							{% for i in 1..5 %}
 								{% if i <= testimony.rate %}
 									<i class="fas fa-star star"></i>
@@ -19,12 +19,14 @@
 								{% endif %}
 							{% endfor %}
 						</div>
-						<p class="name">{{testimony.name}}</p>
-						<p class="comment">{{testimony.comment}}</p>
+						<p class="name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.name}}</p>
+						<p class="comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.comment}}</p>
 					</div>
 				{% endfor %}
 			</div>
 		</div>
+		<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000" data-aos-once="true" data-aos-anchor-placement="top-bottom">
 		{% include 'components/_testimonyForm.html.twig' %}
+		</div>
 	</div>
 </div></div>

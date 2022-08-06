@@ -1,5 +1,6 @@
 .descriptionCardContainer {
-    margin-top: 15%;
+    margin-top: 55%;
+    margin-bottom: 5%;
     padding: 25px;
     display: flex;
     justify-content: space-around;
@@ -15,3 +16,11 @@
         }}
     }
 }
+
+@media screen and (min-width: 1200px) {
+    .descriptionCardContainer {
+        margin-top: 15%;
+        margin-bottom: 5%;
+        }
+    }
+
