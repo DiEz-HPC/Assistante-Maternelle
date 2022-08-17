@@ -1,39 +1,40 @@
-<div class="testimony" id="Temoignages">
-	<div class="background-testimony mt-3">
-		<img class="first-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
-		<img class="second-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
-		<img class="third-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony">
-	</div>
-	<div class="white-box text-center p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true" data-aos-anchor-placement="top-bottom">
-		<img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
-		<div class="carousel slide" data-bs-ride="carousel">
-			<div class="carousel-inner">
-				{% for testimony in testimonies %}
-					<div class="carousel-item {{loop.index == 1 ? "active" : ""}} p-5">
-						<div class="star mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true" data-aos-anchor-placement="top-bottom">
-							{% for i in 1..5 %}
-								{% if i <= testimony.rate %}
-									<i class="fas fa-star star"></i>
-								{% else %}
-									<i class="far fa-star star"></i>
-								{% endif %}
-							{% endfor %}
-						</div>
-						<p class="name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.name}}</p>
-						<p class="comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.comment}}</p>
-					</div>
-				{% endfor %}
-			</div>
-		</div>
-		<div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
-			<!-- Button trigger modal -->
-			<div class="button-container">
-				<button class="btn button" data-bs-toggle="modal" data-bs-target="#testimonyModal">
-					Ajouter un avis
-				</button>
-			</div>
-		</div>
-	</div>
+<div class="testimony" id="Temoignages" data-scroll-container>
+    <div class="background-testimony mt-3" data-scroll-section>
+            <img class="first-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony" data-scroll data-scroll-direction="horizontal" >
+            <img class="second-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony" data-scroll data-scroll-direction="horizontal" data-scroll-speed='-3' data-scroll-target="#Temoignages">
+            <img class="third-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony" data-scroll data-scroll-direction="horizontal" >
+    </div>
+    <div class="white-box text-center p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+        <img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+        <div class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                {% for testimony in testimonies %}
+                    <div class="carousel-item {{loop.index == 1 ? " active" : " "}} p-5">
+                        <div class="star mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+                            {% for i in 1..5 %}
+                                {% if i <= testimony.rate %}
+                                    <i class="fas fa-star star"></i>
+                                {% else %}
+                                    <i class="far fa-star star"></i>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                        <p class="name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.name}}</p>
+                        <p class="comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.comment}}</p>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+            <!-- Button trigger modal -->
+            <div class="button-container">
+                <button class="btn button" data-bs-toggle="modal" data-bs-target="#testimonyModal">
+                    Ajouter un avis
+                </button>
+            </div>
+        </div>
+    </div>
 </div>
 
 {% include 'components/_testimonyForm.html.twig' %}
