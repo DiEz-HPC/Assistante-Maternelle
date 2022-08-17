@@ -1,0 +1,32 @@
+@import "variables.scss";
+
+.contact {
+    color: $flash-color;
+    font-weight: bold;
+
+    .input-form {
+        border-radius: 8px;
+        background-color: $grey-color;
+    }
+
+    .flash-message {
+        display: none;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    button {
+        height: 2.5em;
+        width: 2.5em;
+        padding-right: 7px;
+        border: none;
+        border-radius: 50%;
+        background-color: $flash-color;
+        color: $light-color;
+        font-size: 1.5rem;
+    }
+}

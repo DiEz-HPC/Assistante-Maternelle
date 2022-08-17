@@ -1,0 +1,37 @@
+.pictureCard {
+    width: 400px;
+    height: 250px;
+    margin: 10px;
+    padding: 5px;
+    img {
+        object-fit: cover;
+        height: 100%;
+        width: 100%;
+    }
+}
+.card {
+    min-height: 250px;
+    width: 400px;
+    padding: 10px 20px;
+    border: none;
+    box-shadow: -1px 3px 5px #a7a7a7;
+}
+
+.active-star {
+    color: #fbc02d;
+    margin-bottom: 8px;
+}
+.active-star:hover {
+    color: #f9a825;
+    cursor: pointer;
+}
+.profile {
+    padding-top: 10px;
+}
+.name {
+    font-weight: 700;
+}
+.designation {
+    font-size: 0.84rem;
+    font-weight: 600;
+}

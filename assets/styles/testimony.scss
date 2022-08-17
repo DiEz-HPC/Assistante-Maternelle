@@ -1,0 +1,76 @@
+.testimonyModal {
+    color: $flash-color;
+    font-weight: bold;
+    .form-control {
+        border-radius: 8px;
+        background-color: $grey-color;
+    }
+
+    .sendButton {
+        border: none;
+        border-radius: 50%;
+        background-color: $flash-color;
+        color: $light-color;
+        font-size: 1.5rem;
+    }
+    .star {
+        color: #ffb400;
+        font-size: 2em;
+    }
+}
+
+.testimony {
+    position: relative;
+    overflow-x: hidden;
+
+    .background-testimony {
+        opacity: 0.3;
+        .first-line{
+            margin-left: -5vw;
+        }
+
+        .third-line{
+            margin-left: -5vw;
+        }
+    }
+}
+
+.white-box {
+    max-width: 75vw;
+    min-height: 200px;
+    position: absolute;
+    margin: 0 auto;
+    bottom: 25%;
+    left: 0;
+    right: 0;
+    background-color: $light-color;
+    color: $dark-color;
+    border-radius: 0.5em;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+
+    .leaf {
+        width: 75px;
+        margin: 0 auto;
+        position: absolute;
+        top: -12%;
+        left: 0;
+        right: 0;
+    }
+
+    .star {
+        color: #ffb400;
+        font-size: 1.3em;
+    }
+
+    .name {
+        font-size: 24px;
+        font-weight: bold;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .white-box {
+        max-width: 40vw;
+        bottom: 29%;
+    }
+}

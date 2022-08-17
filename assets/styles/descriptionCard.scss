@@ -1,0 +1,26 @@
+.descriptionCardContainer {
+    margin-top: 55%;
+    margin-bottom: 5%;
+    padding: 25px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    .descriptionCard{
+        min-height: 200px;
+        .cardLogoContainer{
+            display: flex;
+            justify-content: center;
+        .CardLogo{
+            width: 75px;
+            height: 75px;
+        }}
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .descriptionCardContainer {
+        margin-top: 15%;
+        margin-bottom: 5%;
+        }
+    }
+
