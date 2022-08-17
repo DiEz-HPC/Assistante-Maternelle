@@ -36,6 +36,7 @@ Encore
     .addEntry('app-admin', './assets/scripts/app-admin.js')
     .addEntry('contact_form', './assets/scripts/contact.js')
     .addEntry('app-testimony', './assets/scripts/app-testimony.js')
+    .addEntry('app-scroll', './assets/scripts/locomotivScroll.js')
 
     /* Style Entry */
     .addStyleEntry('home', './assets/styles/home.scss')
