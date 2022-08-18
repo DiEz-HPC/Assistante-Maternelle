@@ -20,7 +20,11 @@ sonata_seo:
                 # see http://developers.facebook.com/docs/opengraphprotocol/#types or http://ogp.me/
                 'og:site_name':       Florence assistante Maternelle
                 'og:description':      Florence, l'assistante maternelle qu'il vous faut !
-
+                'og:title':    Florence assistante Maternelle
+                'og:url':  https://florence-houry.deviteasy.fr/
+                'og:type': website
+                'og:image': https://florence-houry.deviteasy.fr/build/images/header-bg.8171e118.webp
+                
             http-equiv:
                 'Content-Type':         text/html; charset=utf-8
                 #'X-Ua-Compatible':      IE=EmulateIE7
