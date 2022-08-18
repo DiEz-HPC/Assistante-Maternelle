@@ -1,5 +1,12 @@
-@import url('http://fonts.cdnfonts.com/css/montserrat');
-@import url('http://fonts.cdnfonts.com/css/traditionsansxlight');
+@font-face {
+    font-family: 'TraditionSansXLight';
+    src: url('../fonts/TraditionSansXLight.woff') format('woff');
+}
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-Regular.woff') format('woff');
+}
+
 
 $text : 'TraditionSansXLight', sans-serif;
 $title : 'Montserrat', sans-serif;
