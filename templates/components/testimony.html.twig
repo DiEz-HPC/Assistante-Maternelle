@@ -5,12 +5,23 @@
             <img class="third-line" src="{{ asset('build/images/banniere_avis_testimony.png') }}" alt="testimony" data-scroll data-scroll-direction="horizontal" >
     </div>
     <div class="white-box text-center p-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true" data-aos-anchor-placement="top-bottom">
-        <img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+        <img src="{{ asset('build/images/leaf.png') }}" alt="logo" class="leaf" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="0" data-aos-once="true" data-aos-anchor-placement="top-bottom">
         <div class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
+                {% if testimonies is empty %}
+               <div class="carousel-item active p-5">
+                        <div class="star mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+                            {% for i in 1..5 %}
+                                    <i class="fas fa-star star"></i>
+                            {% endfor %}
+                        </div>
+                        <p class="name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700" data-aos-once="true" data-aos-anchor-placement="top-bottom">Florence Houry</p>
+                        <p class="comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900" data-aos-once="true" data-aos-anchor-placement="top-bottom">Soyez le premier à me laisser un avis !</p>
+                    </div>
+                {% else %}
                 {% for testimony in testimonies %}
                     <div class="carousel-item {{loop.index == 1 ? " active" : " "}} p-5">
-                        <div class="star mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+                        <div class="star mb-4" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
                             {% for i in 1..5 %}
                                 {% if i <= testimony.rate %}
                                     <i class="fas fa-star star"></i>
@@ -19,14 +30,15 @@
                                 {% endif %}
                             {% endfor %}
                         </div>
-                        <p class="name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1500" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.name}}</p>
-                        <p class="comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="2000" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.comment}}</p>
+                        <p class="name" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.name}}</p>
+                        <p class="comment" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900" data-aos-once="true" data-aos-anchor-placement="top-bottom">{{testimony.comment}}</p>
                     </div>
                 {% endfor %}
+                {% endif %}
             </div>
         </div>
         <div
-            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" data-aos-once="true" data-aos-anchor-placement="top-bottom">
+            data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1100" data-aos-once="true" data-aos-anchor-placement="top-bottom">
             <!-- Button trigger modal -->
             <div class="button-container">
                 <button class="btn button" data-bs-toggle="modal" data-bs-target="#testimonyModal">

@@ -37,5 +37,14 @@
             fill: $light-color;
         }
     }
+    .madeBy{
+        text-align: center;
+        a{
+            color: $light-color;
+            text-decoration: none;
+            font-family: $text;
+            font-size: 14px;
+        }
+    }
 }
 

@@ -28,5 +28,6 @@
         background-color: $flash-color;
         color: $light-color;
         font-size: 1.5rem;
+        text-rendering: optimizeLegibility;
     }
 }
