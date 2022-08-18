@@ -41,7 +41,9 @@ class HomeController extends AbstractController
             return $this->redirect($this->generateUrl('app_home') . '#testimony');
         }
 
-        $testimonies= $testimonyRepository->findAll();
+        $testimonies= $testimonyRepository->findBy([
+            'isVisible' => true
+        ]);
 
         return $this->render('home/index.html.twig', [
             'pictures' => $pictures,
