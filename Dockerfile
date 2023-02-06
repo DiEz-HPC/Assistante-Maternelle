@@ -6,7 +6,7 @@ FROM composer:2.1 as vendor
 WORKDIR /app
 
 COPY composer.json composer.json
-
+COPY composer.lock composer.lock
 
 RUN composer install \
     --ignore-platform-reqs \
@@ -15,7 +15,7 @@ RUN composer install \
     --no-scripts \
     --prefer-dist \
     --quiet
-COPY composer.lock composer.lock
+
 FROM php:8.1-fpm-alpine as phpserver
 
 # add cli tools
@@ -58,6 +58,7 @@ RUN npm install npm@latest -g
 RUN node -v
 RUN npm -v
 RUN npm install
+RUN npm rebuild node-sass
 RUN npm run build
 
 EXPOSE 80
