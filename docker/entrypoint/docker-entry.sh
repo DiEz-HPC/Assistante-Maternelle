@@ -4,6 +4,7 @@ set -e
 php docker/composer.phar install --no-interaction --prefer-dist --optimize-autoloader
 
 
+
 php bin/console cache:clear
 php bin/console cache:warmup
 
