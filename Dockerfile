@@ -54,6 +54,7 @@ COPY --from=vendor /app/vendor /var/www/vendor
 #
 RUN apk add nodejs
 RUN apk add npm
+RUN apk add --no-cache python3
 RUN npm install npm@latest -g
 RUN node -v
 RUN npm -v
