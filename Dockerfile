@@ -63,10 +63,7 @@ WORKDIR /var/www
 
 COPY . /var/www/
 COPY --from=vendor /app/vendor /var/www/vendor
-COPY --from=nodejs /app/node_modules /var/www/node_modules
 COPY --from=nodejs /app/public/build /var/www/public/build
-
-
 
 
 EXPOSE 80
