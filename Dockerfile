@@ -15,7 +15,23 @@ RUN composer install \
     --no-scripts \
     --prefer-dist \
     --quiet
+#
+# Prep App's Node Dependencies
+#
+FROM node:16-alpine as nodejs
 
+WORKDIR /app
+
+COPY package.json package.json
+COPY package-lock.json package-lock.json
+
+RUN npm install
+COPY . .
+RUN npm run build
+
+#
+# Prep App's PHP Server
+#
 FROM php:8.1-fpm-alpine as phpserver
 
 # add cli tools
@@ -47,20 +63,11 @@ WORKDIR /var/www
 
 COPY . /var/www/
 COPY --from=vendor /app/vendor /var/www/vendor
+COPY --from=nodejs /app/node_modules /var/www/node_modules
+COPY --from=nodejs /app/public/build /var/www/public/build
 
-#
-# Prep App's Frontend CSS & JS now
-# so some symfony UX dependencies can access to vendor
-#
-RUN apk add nodejs
-RUN apk add npm
-RUN apk add --no-cache python3
-RUN npm install npm@latest -g
-RUN node -v
-RUN npm -v
-RUN npm install
-RUN npm rebuild node-sass
-RUN npm run build
+
+
 
 EXPOSE 80
 
