@@ -6,7 +6,7 @@ FROM composer:2.1 as vendor
 WORKDIR /app
 
 COPY composer.json composer.json
-COPY composer.lock composer.lock
+
 
 RUN composer install \
     --ignore-platform-reqs \
@@ -15,7 +15,7 @@ RUN composer install \
     --no-scripts \
     --prefer-dist \
     --quiet
-
+COPY composer.lock composer.lock
 FROM php:8.1-fpm-alpine as phpserver
 
 # add cli tools
